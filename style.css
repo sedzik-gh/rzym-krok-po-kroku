@@ -8,4 +8,6 @@
 #storageWarning{display:none!important}
 .edit-row-actions button:hover{background:#f7f8f6;color:inherit;border-color:var(--line)}
 .day-brief details,.day-brief .plan-note{display:none}
+.timing-note{display:none}
+.stay-card{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 22px;margin:0 0 26px;border:1px solid #e4bd5b;border-radius:14px;background:#fff2c9}.stay-card .eyebrow{margin-bottom:5px;color:#8e1b35}.stay-card h2{font-size:1.35rem}.stay-card p:last-child{margin-top:5px;color:var(--muted);font-size:.9rem}.stay-card .button{flex-shrink:0}@media(max-width:520px){.stay-card{align-items:flex-start;flex-direction:column}.stay-card .button{width:100%}}
 .example-note,.plan-status{display:none}
