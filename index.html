@@ -7,9 +7,12 @@
   <meta name="description" content="Twój osobisty przewodnik po Rzymie. Trzy dni, osiem niezwykłych miejsc i opowieści po polsku — w Twoim tempie.">
   <title>Rzym — krok po kroku</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23315447'/%3E%3Ctext x='16' y='24' text-anchor='middle' font-family='Georgia' font-size='26' fill='%23fff'%3Er%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="style.css">
   <script src="data.js" defer></script>
   <script src="app.js" defer></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="maps.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#plan">Przejdź do planu</a>
@@ -20,7 +23,7 @@
     <div class="example-note"><span class="badge">Plan przykładowy</span><span>Dopasuj go do swoich rezerwacji i rytmu dnia.</span></div>
     <div id="storageWarning" class="notice" role="status" hidden></div>
     <nav class="day-tabs" aria-label="Wybierz dzień podróży" id="days"><button class="day-tab active" aria-pressed="true">Dzień 1 <span>Antyczny Rzym</span></button><button class="day-tab">Dzień 2 <span>Serce miasta</span></button><button class="day-tab">Dzień 3 <span>Za Tybrem</span></button></nav>
-    <div class="workspace"><section id="plan" tabindex="-1"><div class="section-heading"><div><p class="eyebrow" id="dayEyebrow">DZIEŃ 01 / 03</p><h2 id="dayTitle">Śladami starożytności</h2></div><span class="day-total" id="dayTotal">2 miejsca · ok. 3 godz. 30 min</span></div><p id="dayDescription" class="muted">Koloseum i Forum Romanum — jeden rejon, dwa spojrzenia na antyczny Rzym.</p><div id="dayPlan"></div><ol id="places" class="route-list"><li class="place-card"><div class="place-body"><span class="badge">01 · OK. 90 MIN</span><h3>Koloseum</h3><p>Wejdź w świat gladiatorów i poznaj niezwykłą machinę rzymskich widowisk.</p><p class="address">Piazza del Colosseo, Roma</p><button class="button primary">Zobacz szczegóły</button></div></li></ol><p class="timing-note">Czasy są orientacyjne: dotyczą zwiedzania, bez kolejek, przerw i dojścia. Sprawdź zasady wstępu na oficjalnych stronach miejsc.</p></section>
+    <div class="workspace"><section id="plan" tabindex="-1"><div class="section-heading"><div><p class="eyebrow" id="dayEyebrow">DZIEŃ 01 / 03</p><h2 id="dayTitle">Śladami starożytności</h2></div><span class="day-total" id="dayTotal">2 miejsca · ok. 3 godz. 30 min</span></div><p id="dayDescription" class="muted">Koloseum i Forum Romanum — jeden rejon, dwa spojrzenia na antyczny Rzym.</p><section id="dayMap" class="day-map-section" aria-live="polite"></section><div id="dayPlan"></div><ol id="places" class="route-list"><li class="place-card"><div class="place-body"><span class="badge">01 · OK. 90 MIN</span><h3>Koloseum</h3><p>Wejdź w świat gladiatorów i poznaj niezwykłą machinę rzymskich widowisk.</p><p class="address">Piazza del Colosseo, Roma</p><button class="button primary">Zobacz szczegóły</button></div></li></ol><p class="timing-note">Czasy są orientacyjne: dotyczą zwiedzania, bez kolejek, przerw i dojścia. Sprawdź zasady wstępu na oficjalnych stronach miejsc.</p></section>
     <aside id="today" class="today" tabindex="-1"><p class="eyebrow">TWÓJ DZIEŃ, KROK PO KROKU</p><h2>Dzisiaj</h2><p class="muted" id="todayDay">Wybrany dzień podróży: 1</p><div id="todayContent"></div></aside></div>
     <footer><span class="footer-brand">Rzym, krok po kroku.</span><span>Dobry plan. Miejsce na spontaniczność.</span><button class="text-button" data-action="about">Źródła i wskazówki</button></footer>
   </main>
